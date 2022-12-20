@@ -9,13 +9,11 @@ namespace LINQExtension.Library
         public static IEnumerable<T> Where<T>(this IEnumerable<T> list, Func<T, bool> predicate)
         {
             if (list == null)
-            {
                 throw new ArgumentNullException("source");
-            }
+
             if (predicate == null)
-            {
                 throw new ArgumentNullException("predicate");
-            }
+
             foreach (T item in list)
             {
                 if (predicate(item))
@@ -28,13 +26,10 @@ namespace LINQExtension.Library
         public static T WhereFirstOrDefault<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
             if (source == null)
-            {
                 throw new ArgumentNullException("source");
-            }
             if (predicate == null)
-            {
                 throw new ArgumentNullException("predicate");
-            }
+            
             foreach (T item in source)
             {
                 if (predicate(item))
@@ -48,13 +43,9 @@ namespace LINQExtension.Library
         public static T WhereLastOrDefault<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
             if (source == null)
-            {
                 throw new ArgumentNullException("source");
-            }
             if (predicate == null)
-            {
                 throw new ArgumentNullException("predicate");
-            }
             foreach (T item in source.Reverse())
             {
                 if (predicate(item))
@@ -67,6 +58,9 @@ namespace LINQExtension.Library
 
         public static IEnumerable<T> LazyReverse<T>(this IList<T> source)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
             for (var i = source.Count - 1; i >= 0; i--)
                 yield return source[i];
         }
@@ -163,13 +157,10 @@ namespace LINQExtension.Library
         public static int Count<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
             if (source == null)
-            {
                 throw new ArgumentNullException("source");
-            }
             if (predicate == null)
-            {
                 throw new ArgumentNullException("predicate");
-            }
+
             int i = 0;
             foreach (T item in source)
             {
@@ -280,7 +271,7 @@ namespace LINQExtension.Library
             if (second == null)
                 throw new ArgumentNullException("second");
 
-            IList<T> list = new List<T>();
+            List<T> list = new List<T>();
             foreach (T item in source)
             {
                 if (second.Contains(item) && !list.Contains(item))
@@ -314,7 +305,7 @@ namespace LINQExtension.Library
         public static string JoinStrings(this IEnumerable<string> source, string separator)
         {
             if (source == null)
-                return null;
+                throw new ArgumentNullException("source");
 
             return string.Join(separator, source);
         }
