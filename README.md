@@ -1,5 +1,6 @@
 # LINQExtension
 <br>
+
 ## What is LINQ
 
 Language-Integrated Query (LINQ) is a powerful set of technologies based on the integration of query capabilities directly into the C# language. LINQ Queries are the first-class language construct in C# .NET, just like classes, methods, events. The LINQ provides a consistent query experience to query objects (LINQ to Objects), relational databases (LINQ to SQL), and XML (LINQ to XML).
@@ -7,14 +8,10 @@ Language-Integrated Query (LINQ) is a powerful set of technologies based on the 
 LINQ (Language Integrated Query) is uniform query syntax in C# and VB.NET to retrieve data from different sources and formats. It is integrated in C# or VB, thereby eliminating the mismatch between programming languages and databases, as well as providing a single querying interface for different types of data sources.
 
 <br>
-<hr>
-<br>
 
 ## What is Extension Method
 Extension methods enable you to "add" methods to existing types without creating a new derived type, recompiling, or otherwise modifying the original type. Extension methods are static methods, but they're called as if they were instance methods on the extended type. For client code written in C#, F# and Visual Basic, there's no apparent difference between calling an extension method and the methods defined in a type.
 
-<br>
-<hr>
 <br>
 
 ## What is Unit Test
